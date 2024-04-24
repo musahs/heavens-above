@@ -14,4 +14,4 @@ jobs:
           with:
             deploy_key: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
             publish_dir: ./out
-            publish_branch: main
+            publish_branch: gh-pages
