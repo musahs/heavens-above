@@ -12,8 +12,8 @@
     "deploy": "echo \"Deploying.\"",
     "tasks": "echo \"Tasks.\"",
     "review": "echo \"Reviewing.\"",
-    "docs": "jsdoc -c jsdoc.json",
-    "deploy-docs": "gh-pages -d docs",
+    "docs": "npx jsdoc -c jsdoc.json",
+    "deploy-docs": "npx gh-pages -d docs",
     "custom-task": "echo \"Performing something.\""
   },
   "dependencies": {
