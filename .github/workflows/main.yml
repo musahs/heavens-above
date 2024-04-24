@@ -13,7 +13,5 @@ jobs:
       run: npm i
     - name: Run tests
       run: npm test
-    - name: Init lint
-      run: npm run lint:init
     - name: Run linting
       run: npm run lint

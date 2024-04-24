@@ -7,18 +7,16 @@
   "scripts": {
     "start": "node run.js",
     "test": "echo \"Testing.\"",
-    "lint:init": "eslint --init",
     "lint": "eslint .",
-    "build": "babel src -d dist", 
+    "build": "babel src -d dist",
     "deploy": "echo \"Deploying.\""
   },
   "dependencies": {
+    "@babel/cli": "^7.14.3",
+    "@babel/core": "^7.14.3",
+    "@babel/preset-env": "^7.14.2",
     "cheerio": "^1.0.0-rc.3",
     "request": "^2.88.2",
-    "eslint": "^7.26.0",
-    "@babel/core": "^7.14.3",
-    "@babel/cli": "^7.14.3",
-    "@babel/preset-env": "^7.14.2",
     "webpack": "^5.38.1",
     "webpack-cli": "^4.7.0"
   },
@@ -38,5 +36,10 @@
   "homepage": "https://github.com/PKUPI/heavens-above#readme",
   "engines": {
     "node": ">=12.10.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.57.0",
+    "eslint-plugin-react": "^7.34.1",
+    "globals": "^15.0.0"
   }
 }
