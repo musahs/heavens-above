@@ -7,6 +7,7 @@
   "scripts": {
     "start": "node run.js",
     "test": "echo \"Testing.\"",
+    "lint:init": "eslint --init",
     "lint": "eslint .",
     "build": "babel src -d dist", 
     "deploy": "echo \"Deploying.\""
