@@ -12,6 +12,6 @@ jobs:
         - name: Config Email
           run: git config --global user.email "musaharoon.2003@gmail.com"
         - name: Config Name
-          run: git config --global user.name "Musa"
+          run: git config --global user.name "musahs"
         - name: Deploy Docs
           run: npm run deploy-docs
