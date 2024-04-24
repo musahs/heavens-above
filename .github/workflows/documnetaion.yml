@@ -1,0 +1,13 @@
+name: Documentation
+on:
+    push:
+        branches: [ main ]
+jobs:
+    docs:
+        runs-on: ubuntu-latest
+        steps:
+        - uses: actions/checkout@v2
+        - name: Build Docs
+          run: npm run docs
+        - name: Deploy Docs
+          run: npm run deploy-docs
