@@ -12,7 +12,7 @@ jobs:
         - name: Deploy Docs
           run: |
             git config --global user.name 'github-actions'
-            git config --global user.email 'github-actions@github.com'
+            git config --global user.email 'musaharoon.2003@gmail.com'
             npm run deploy-docs
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
