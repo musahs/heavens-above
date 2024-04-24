@@ -1,0 +1,17 @@
+name: Documentation
+on:
+    push:
+        branches: [ main ]
+jobs:
+    docs:
+        runs-on: ubuntu-latest
+        steps:
+        - uses: actions/checkout@v2
+        - name: Build Docs
+          run: npm run docs
+        - name: Deploy
+          uses: peaceiris/actions-gh-pages@v3
+          with:
+            deploy_key: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+            publish_dir: ./out
+            publish_branch: main
