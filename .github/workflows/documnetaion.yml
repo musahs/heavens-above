@@ -9,9 +9,10 @@ jobs:
         - uses: actions/checkout@v2
         - name: Build Docs
           run: npm run docs
-        - name: Config Email
-          run: git config --global user.email "musaharoon.2003@gmail.com"
-        - name: Config Name
-          run: git config --global user.name "musahs"
         - name: Deploy Docs
-          run: npm run deploy-docs
+          run: |
+            git config --global user.name 'github-actions'
+            git config --global user.email 'github-actions@github.com'
+            npm run deploy-docs
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
