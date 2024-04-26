@@ -11,7 +11,7 @@
     "build": "babel src -d dist",
     "deploy": "echo \"Deploying.\"",
     "tasks": "echo \"Tasks.\"",
-    "review": "echo \"Reviewing.\"",
+    "review": "eslint .",
     "docs": "npx jsdoc -c jsdoc.json",
     "custom-task": "echo \"Performing something.\""
   },
