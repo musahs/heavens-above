@@ -13,7 +13,7 @@ const eventsIridium = ["brightness", "altitude", "azimuth", "satellite", "distan
  * @param {number} config.opt - The options for the request.
  * @param {string} config.root - The root directory to store the scraped data.
  */
-function getTable(config) {
+modules.exports.getTable = function getTable(config) {
     let database = config.database || [];
     let counter = config.counter || 0;
     const opt = config.opt || 0;

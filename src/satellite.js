@@ -3,26 +3,52 @@ const cheerio = require("cheerio");
 const fs = require("fs");
 const utils = require("./utils");
 
+/**
+ * Properties of the satellite data.
+ */
 const property = ["url", "date", "brightness", "events", "passType", "image", "scoreData", "exist", "score", "id"];
+
+/**
+ * Events related to the satellite.
+ */
 const events = ["rise", "reachAltitude10deg", "highestPoint", "dropBelowAltitude10deg", "set", "exitShadow", "enterShadow"];
+
+/**
+ * Attributes of the satellite data.
+ */
 const attribute = ["time", "altitude", "azimuth", "distance", "brightness", "sunAltitude"];
 
+/**
+ * Comparison functions for sorting the satellite data.
+ */
 const compare = [
-	function(a, b) {
-		return a[property[6]][1] >= b[property[6]][1] ? 1 : -1; //星等（越小越好）
-	},
-	function(a, b) {
-		return a[property[6]][2] >= b[property[6]][2] ? 1 : -1; //太阳高度（越小越好）
-	},
-	function(a, b) {
-		return a[property[6]][3] <= b[property[6]][3] ? 1 : -1; //卫星高度（越大越好）
-	},
-	function(a, b) {
-		return a[property[7]] <= b[property[7]] ? 1 : -1; //持续时间（越大越好）
-	}
+    //星等（越小越好）
+    function(a, b) {
+        return a[property[6]][1] >= b[property[6]][1] ? 1 : -1;
+    },
+    //太阳高度（越小越好）
+    function(a, b) {
+        return a[property[6]][2] >= b[property[6]][2] ? 1 : -1;
+    },
+    //卫星高度（越大越好）
+    function(a, b) {
+        return a[property[6]][3] <= b[property[6]][3] ? 1 : -1;
+    },
+    //持续时间（越大越好）
+    function(a, b) {
+        return a[property[7]] <= b[property[7]] ? 1 : -1;
+    }
 ];
+
+/**
+ * Weights for the comparison functions.
+ */
 const weight = [9.5, 6, 6.5, 6.5];
 
+/**
+ * Fetches and processes the satellite data from the website.
+ * @param {Object} config - Configuration for fetching the data.
+ */
 function getTable(config) {
 	let database = config.database || [];
 	let counter = config.counter || 0;
@@ -170,5 +196,8 @@ function getTable(config) {
 		});
 	});
 }
+
+exports.getTable = getTable;
+
 
 exports.getTable = getTable;
